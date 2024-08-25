@@ -52,8 +52,13 @@ $(BUILD_DIR)/%.o: $(TEST_DIR)/%.c | $(BUILD_DIR)
 	$(CC) $(CFLAGS) -c -o $@ $<
 
 # Run the main program
+# run: $(TARGET)
+# 	./$(TARGET)
+
+# Run the main program with a default path in the root directory
 run: $(TARGET)
-	./$(TARGET)
+	@echo "Running $(TARGET) with /workspaces/gios-env directory..."
+	./$(TARGET) /workspaces/gios-env
 
 # Clean up build artifacts
 clean:

@@ -1,2 +1,0 @@
-
-char *say_hello();
